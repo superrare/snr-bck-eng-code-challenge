@@ -1,5 +1,7 @@
 # Senior Backend Engineering Code Challenge
 
+Please spend a maximum of 2 hours on this challenge.
+
 This should be taken as way to demonstrate your:
 * How you structure projects
     * formatting, organization, linting, etc.
