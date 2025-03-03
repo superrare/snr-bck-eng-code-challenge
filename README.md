@@ -15,7 +15,7 @@ This should be taken as way to demonstrate your:
 ## The Task
 The participant will build a NestJS application that:
 
-1.	Accepts coordinates via a webhook (POST endpoint).
+1.	Accepts coordinates via a protected webhook (POST endpoint).
 1.	Performs a transformation on the coordinates.
 1.	Calls the Overpass API to get nearby landmarks.
 1.	Saves these landmarks in a SQLite database.
@@ -26,7 +26,7 @@ The participant will build a NestJS application that:
 
 ### Overview & Requirements
 
-#### 1.	Webhook Endpoint (POST /webhook)
+#### 1. Protected Webhook Endpoint (POST /webhook)
 *	Receives a JSON payload with lat and lng.
 *	For example:
 
@@ -39,6 +39,7 @@ The participant will build a NestJS application that:
 
 
 *	Be sure to have some validation in place and return proper HTTP status codes.
+* Require `Authorization` header with a secret
 
 #### 2.	Overpass API Call
 
@@ -66,8 +67,8 @@ The participant will build a NestJS application that:
 *	Use some form of caching to store the landmarks that will be used for fetching.
 * Implement a write-through cache.
 
-#### 5.	Data Retrieval Endpoint (GET /landmarks)
-*	Accepts query parameters lat and lng.
+#### 5. Data Retrieval Endpoint (GET /landmarks)
+* Accepts query parameters lat and lng.
 * Use your best judgement on how to design the data that is returned.
 
 #### 6.	Error Handling & Validation
